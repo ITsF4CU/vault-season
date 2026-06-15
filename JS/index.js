@@ -46,9 +46,9 @@ audioBtn.addEventListener('click', (e) => {
 
     if (music.muted) {
         music.muted = false;
-        audioIcon.className = 'ph ph-speaker-simple-high';
+        audioIcon.className = 'ph ph-speaker-simple-slash';
     } else {
         music.muted = true;
-        audioIcon.className = 'ph ph-speaker-simple-slash';
+        audioIcon.className = 'ph ph-speaker-simple-high';
     }
 });

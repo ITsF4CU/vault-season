@@ -1,0 +1,268 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@property --color-izq {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: rgb(0, 81, 255); /* Tu color base de la izquierda */
+}
+
+@property --color-der {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: rgb(130, 4, 155); /* Tu color base de la derecha */
+}
+
+main {
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 4%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    background: linear-gradient(90deg, var(--color-izq), rgb(5,5,5), var(--color-der));
+    animation: pulsoGradiente 4s ease-in-out infinite alternate;
+    position: relative;
+}
+
+@keyframes pulsoGradiente{
+    0% {
+        --color-izq: rgb(0, 6, 19);
+        --color-der: rgb(19, 0, 22);
+    }
+
+    100% {
+        --color-izq: rgb(0, 11, 48);
+        --color-der: rgb(40, 0, 48);
+    }
+}
+
+.pink-hours {
+    -webkit-text-stroke-color: rgb(255, 0, 255);
+}
+
+.blue {
+    color: rgb(0, 162, 255);
+    text-shadow: 0 0 40px rgb(0, 162, 255);
+}
+
+.pink {
+    color: rgb(255, 0, 255);
+    text-shadow: 0 0 40px rgb(255, 0, 255);
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .season {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 19px;
+}
+
+
+.season .season-title {
+    font-family: 'MiFuentePersonalizada';
+}
+
+.season .season-title .blue-title {
+    -webkit-text-stroke: #0080ff;
+    -webkit-text-stroke-width: 1px ;
+    color: transparent
+}
+
+.season .season-title .pink-title {
+    color: transparent;
+    -webkit-text-stroke: #f200ff;
+    -webkit-text-stroke-width: 1px;
+}
+
+.season .season-description {
+    font-size: 1rem;
+    color: white;
+    font-family: 'MiFuentePersonalizada'
+}
+
+.season-launch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 19px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    color: white;
+}
+
+.main-title-color-1 {
+    color: #0080ff;
+    text-shadow: #0080ff 0 0 15px
+}
+
+.main-title-color-2 {
+    color: #f200ff;
+    text-shadow: #f200ff 0 0 15px
+}
+
+.options {
+    display: flex;
+    gap: 20px;
+}
+
+.launch-title {
+    font-family: 'MiFuentePersonalizada';
+    font-size: clamp(0.7rem, 1vw, 1rem);
+}
+
+.launch-title-bloom {
+    text-shadow: white 0 0 15px
+}
+
+button {
+    padding: 9px 26px;
+    background: none;
+    border: none;
+    color: white;
+    border: 1px solid #f200ff;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease
+}
+
+button:hover {
+    background: #f200ff;
+    color: black;
+    box-shadow: #f200ff 0px 0px 40px
+}
+
+.video-container {
+    position: absolute;
+    width: 90%;
+    height: 85%;
+    background-color: black;
+    border: 4px solid rgb(255, 0, 255);
+    box-shadow: 0 0 20px rgb(255, 0, 255);
+    padding: 5px;
+    opacity: 0%;
+    transform: translate(0 ,-100vh);
+    backface-visibility: hidden;
+    transition: transform 0.5s ease, opacity 0.5s ease-in;
+}
+
+
+.active {
+    display: block;
+    opacity: 100%;
+    transform: translate(0);
+}
+
+#quit-button, #quit-button-2 {
+    position: absolute;
+    top: -2.1%;
+    right: -1%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    background-color: black;
+    border-radius: 100%;
+    border: 2px solid rgb(255, 0, 255); 
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#quit-button:hover {
+    box-shadow: 0 0 20px rgb(255, 0, 255);
+}
+
+.ph-x {
+    color: rgb(255, 0, 255);
+    font-size: clamp(1.2rem, 4vmin, 2rem)
+}
+
+iframe {
+    width: 100%;
+    height: 100%
+}
+
+#audio-btn {
+    padding: 5px;
+    position: fixed;
+    background: none;
+    border: none;
+    background-color: rgb(255, 0, 255);
+    border: 2px solid rgb(255, 0, 255);
+    border-radius: 100%;
+    box-shadow: 0 0 20px rgb(255, 0, 255);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    top: 89%;
+    right: 5%
+}
+
+#audio-btn:hover {
+    background-color: rgb(146, 2, 146);
+}
+
+#audio-btn i {
+    font-size: 30px;
+    color: black
+}
+
+
+iframe {
+    width: 100%;
+    height: 100%
+}
+
+@font-face {
+    font-family: 'MiFuentePersonalizada'; 
+    src: url('../fonts/Nulshock\ Bd.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@media (max-width: 1366px) {
+    #audio-btn {
+        right: 3%;
+        top: 85%
+    }
+
+    main {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 80px
+    }
+}
